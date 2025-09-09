@@ -1,0 +1,34 @@
+import Foundation
+
+
+class solution {
+    func pairSum(_ n: Int,_ array: [Int])-> [Int]{
+        let target = n
+        var sum = 0
+        for i in 0..<array.count-1 {
+          sum = array[i]+array[i+1]
+            if sum == target {
+                return [i,i+1]
+            }
+        }
+        return [0,0]
+   }
+}
+
+print("Enter the array")
+var array: [Int] = []
+
+if let line = readLine() {
+    array = line
+        .split(separator: " ")
+        .compactMap { Int($0) }
+}
+
+print("Enter the targeted value")
+
+var n = Int(readLine() ?? "0")!
+
+let s = solution()
+
+
+print(s.pairSum(n,array))

@@ -1,0 +1,43 @@
+
+import Foundation
+
+//  Holow Diamond n = 4
+//     *
+//   *   *
+//  *     *
+// *       *
+//  *     *
+//   *  *
+//    *
+
+func hollowDiamond(_ n: Int) {
+    let mid = (2 * n - 1) / 2
+    _ = 1
+    for i in 0..<2 * n - 1 {
+       
+        for j in 0..<2*n-1{
+            
+            if (j == mid-i || j == mid+i) && i <= mid {
+                print("*",terminator: "")
+            } else if i>mid && ( j == i-mid || j == mid*3-(i)){
+                print("*",terminator: "")
+            }else{
+                print( " ",terminator: "")
+            }
+        }
+        print()
+    }
+}
+
+
+
+
+print("Enter The Number")
+
+guard let n = Int(readLine() ?? "0") else {
+    print("Invalid Number")
+    exit(0)
+}
+
+hollowDiamond(n)
+

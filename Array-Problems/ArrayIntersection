@@ -1,0 +1,43 @@
+import Foundation
+
+
+func commonArray(_ a1:[Int],_ a2:[Int])->[Int]{
+    
+    var commonArray = [Int]()
+    
+    for i in 0..<a1.count{
+        for j in 0..<a2.count{
+            if a1[i] == a2[j]{
+                commonArray.append(a1[i])
+            }
+        }
+    }
+  
+    return commonArray
+}
+
+
+
+print("Enter the values of Array 1:")
+
+var array1: [Int] = []
+var array2: [Int] = []
+
+
+
+if let line = readLine() {
+    array1 = line
+        .split(separator: " ")
+        .compactMap { Int($0) }   // convert pieces into Int
+}
+
+print("Enter the values of Array 2 : ")
+
+if let line = readLine() {
+    array2 = line
+        .split(separator: " ")
+        .compactMap { Int($0) }
+}
+
+print(commonArray(array1,array2))
+

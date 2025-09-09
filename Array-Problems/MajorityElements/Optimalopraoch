@@ -1,0 +1,43 @@
+
+import Foundation
+
+
+class solution {
+    func pairSum(_ array: [Int])-> Int{
+        var count = 1
+        var maxCount = 1
+        let n = array.count
+        let arra1 : [Int] = array.sorted()
+        var ans = arra1[0]
+        for i in 0..<arra1.count-1 {
+                if arra1[i] == arra1[i+1] {
+                  count += 1
+              }else {
+                  count = 1
+                }
+              
+              if count > maxCount {
+                  maxCount = count
+                   ans = arra1[i]
+            }
+            }
+        return ans
+        }
+   }
+
+
+print("Enter the array")
+var array: [Int] = []
+
+if let line = readLine() {
+    array = line
+        .split(separator: " ")
+        .compactMap { Int($0) }
+}
+
+
+
+let s = solution()
+
+
+print(s.pairSum(array))

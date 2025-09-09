@@ -1,0 +1,16 @@
+
+import Foundation
+
+//Check character if upper cased or lower cassed
+print("Enter to Check The Character Is Upper Case Or Lower Case")
+if let inputString:String = readLine() ,
+   let char = inputString.first{
+    let asciiValue = char.asciiValue!
+    if asciiValue > 64 && asciiValue < 91 {
+        print("\(char) Is Upper Case")
+    }else if asciiValue > 96 && asciiValue < 123{
+        print("\(char) Is Lower Case")
+    }
+}else{
+    print("Invalid Input")
+}

@@ -1,0 +1,35 @@
+
+import Foundation
+
+
+func uniqueNumber(_ n:[Int]){
+    
+  for i in 0..<n.count{
+        var isUnique = true
+      for j in 0..<n.count{
+          if(i != j && n[i] == n[j]){
+              isUnique = false
+              break
+          }
+      }
+      if isUnique{
+          print(n[i])
+      }
+    }
+    
+}
+
+
+
+print("Enter the values")
+
+var number: [Int] = []
+
+if let line = readLine() {
+    number = line
+        .split(separator: " ")
+        .compactMap { Int($0) }   // convert pieces into Int
+}
+
+uniqueNumber(number)
+

@@ -1,0 +1,35 @@
+
+import Foundation
+
+//  Reverse triangle pattern n = 4
+//   1111
+//    222
+//     33
+//      4
+func reverseTrianglePattern(_ n: Int) {
+    var number = 1
+    for i in 0..<n {
+        
+        for _ in 0..<i{
+            print(" ",terminator: "")
+        }
+        for _ in 0..<n-i{
+            print(number,terminator: "")
+        }
+        print()
+        number += 1
+    }
+}
+
+
+
+
+print("Enter The Number")
+
+guard let n = Int(readLine() ?? "0") else {
+    print("Invalid Number")
+    exit(0)
+}
+
+reverseTrianglePattern(n)
+

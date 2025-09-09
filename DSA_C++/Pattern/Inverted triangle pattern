@@ -1,0 +1,32 @@
+//Inverted triangle pattern n = 4
+//1111
+// 222
+//  33
+//   4
+
+void pattern9(int n){
+    int number = 1
+    
+    // loop for spacing
+    for(int i = 0;i<n && i>0;i++){
+        cout<<" ";
+    }
+    
+    for(int j = i+1;j <= n;i++){
+        cout<<number<<" ";
+    }
+    number++;
+    cout<<endl;
+    
+    
+}
+
+int main(){
+
+
+cout<<"Enter the number : ";
+int n;
+cin>>n;
+pattern9(n);
+}
+

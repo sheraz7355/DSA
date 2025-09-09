@@ -1,0 +1,41 @@
+
+import Foundation
+
+
+func minmaxNumber(_ n:[Int]){
+    
+    
+    var minValue : Int = n[0]
+    var maxValue : Int = n[0]
+    
+    for i in n.indices.dropFirst(){
+        
+        if n[i] < minValue{
+            minValue = n[i]
+        }
+        
+        if n[i] > maxValue{
+            maxValue = n[i]
+        }
+        
+    }
+    
+    print("Min value \(minValue) ; Max value \(maxValue)")
+    
+        
+}
+
+
+
+print("Enter the values")
+
+var number: [Int] = []
+
+if let line = readLine() {
+    number = line
+        .split(separator: " ")
+        .compactMap { Int($0) }   // convert pieces into Int
+}
+
+minmaxNumber(number)
+

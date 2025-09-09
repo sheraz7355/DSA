@@ -1,0 +1,31 @@
+
+import Foundation
+
+
+func nPrimeNumbers(_ n:Int){
+    
+    if n<2{
+        print("No prime numbers")
+        return
+    }
+ 
+    for i in 2...n{
+        // loop for checking each number
+        var isPrime = true
+        for j in 2..<i{
+            if i%j == 0{
+                isPrime = false
+                break
+            }
+        }
+        if isPrime{
+            print(i)
+        }
+    }
+    
+}
+
+
+print("Enter the value of n")
+var n:Int = Int(readLine() ?? "0")!
+print(nPrimeNumbers(n))

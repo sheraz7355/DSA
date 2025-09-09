@@ -1,0 +1,29 @@
+
+//
+//  main.swift
+//  DSA_Swift
+//
+//  Created by MacBook Pro on 30/07/2025.
+//
+
+import Foundation
+
+func checkPrime(_ n : Int)->Bool{
+    if n<=1{
+        return false
+    }
+    for i in 2..<n{
+        if n%i==0{
+            return false
+        }
+    }
+    return true
+}
+
+print("Enter the number")
+let n = Int(readLine() ?? "0")!
+if checkPrime(n){
+    print("\(n) is a prime number")
+}else{
+    print("\(n) is not a prime number")
+}

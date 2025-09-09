@@ -1,0 +1,33 @@
+
+import Foundation
+
+
+class solution {
+    func subArraySum(_ nums: [Int])-> Int{
+        var iterationCount: Int = 0
+        var maxSum: Int = 0
+       for i in 0..<nums.count {
+           for j in i..<nums.count {
+               var sum = 0
+               for k in iterationCount...j{
+                   sum += nums[k]
+                   if sum>maxSum{
+                       maxSum = sum
+                   }
+               }
+           }
+           iterationCount += 1
+        }
+        return maxSum
+    }
+}
+
+let s = solution()
+
+var arr: [Int] = []
+
+if let line = readLine() {
+    arr = line.split(separator: ",").compactMap{ Int($0)}
+}
+
+print(s.subArraySum(arr))

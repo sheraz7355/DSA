@@ -1,0 +1,20 @@
+
+import Foundation
+
+print("Enter the number:")
+
+if let number = Int(readLine() ?? "0") {
+    var sum = 0
+    if number < 0 {
+        print("Negative numbers are invalid")
+    } else {
+        for i in 1...number {
+            if i % 3 == 0 { // divide check
+                sum += i
+            }
+        }
+        print("Sum of divissible of 3 from 1 to \(number) is \(sum)")
+    }
+} else {
+    print("Invalid input")
+}
